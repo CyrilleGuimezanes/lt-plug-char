@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="lt.pgb.phonegap.chartboost"
+    id="lt.pgb.plugin.chartboost"
     version="1.0.0">
 
     <name>Cordova Chartboost plugin</name>
@@ -9,10 +9,8 @@
     <author>Luditeam</author>
     <license>MIT</license>
     <keywords>luditeam</keywords>
-    <repo></repo>
-    <issue></issue>
 	<engines>
-	    <engine name="cordova" version=">=3.0.0" />
+	    <engine name="cordova" version=">=3.5.0" />
 	</engines>
 
     <js-module src="www/chartboost.js">
