@@ -1,8 +1,8 @@
 //Copyright (c) 2015 Luditeam
 //Email: dev@Luditeam.com
 #import <Cordova/CDV.h>
-#import <Chartboost/Chartboost.h>
-#import <Chartboost/CBNewsfeed.h>
+#import "Chartboost.framework/Versions/A/Headers/Chartboost.h"
+#import "Chartboost.framework/Versions/A/Headers/CBNewsfeed.h"
 
 @interface ChartboostPlugin : CDVPlugin <ChartboostDelegate, CBNewsfeedDelegate>
 
