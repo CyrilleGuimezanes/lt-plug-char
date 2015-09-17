@@ -6,6 +6,7 @@ module.exports = {
 	_isShowingInterstitialAd: false,
 	_isShowingMoreAppsAd: false,
 	_isShowingRewardedVideoAd: false,
+	//
 
 	setUp: function(appId, appSignature) {
 		var self = this;
@@ -17,20 +18,20 @@ module.exports = {
 /*
 					if (result == "onInterstitialAdPreloaded") {
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdPreloaded)
 							self.onFullScreenAdPreloaded();
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdPreloaded)
 							self.onInterstitialAdPreloaded();
 					}
 					else if (result == "onInterstitialAdLoaded") {
 						self._loadedInterstitialAd = true;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdLoaded)
 							self.onFullScreenAdLoaded();
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdLoaded)
 							self.onInterstitialAdLoaded();
 					}
@@ -38,20 +39,20 @@ module.exports = {
 						self._loadedInterstitialAd = false;
 						self._isShowingInterstitialAd = true;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdShown)
 							self.onFullScreenAdShown();
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdShown)
 							self.onInterstitialAdShown();
 					}
 					else if (result == "onInterstitialAdHidden") {
 						self._isShowingInterstitialAd = false;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						 if (self.onFullScreenAdHidden)
 							self.onFullScreenAdHidden();
-//cranberrygame end; deprecated
+//luditeam end
 						 if (self.onInterstitialAdHidden)
 							self.onInterstitialAdHidden();
 					}
@@ -119,23 +120,22 @@ module.exports = {
 
 					var event = result["event"];
 					var location = result["message"];
-					var reward = result["reward"];					
 					if (event == "onInterstitialAdPreloaded") {
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdPreloaded)
 							self.onFullScreenAdPreloaded(location);
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdPreloaded)
 							self.onInterstitialAdPreloaded(location);
 					}
 					else if (event == "onInterstitialAdLoaded") {
 						self._loadedInterstitialAd = true;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdLoaded)
 							self.onFullScreenAdLoaded(location);
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdLoaded)
 							self.onInterstitialAdLoaded(location);
 					}
@@ -143,20 +143,20 @@ module.exports = {
 						self._loadedInterstitialAd = false;
 						self._isShowingInterstitialAd = true;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						if (self.onFullScreenAdShown)
 							self.onFullScreenAdShown(location);
-//cranberrygame end; deprecated
+//luditeam end
 						if (self.onInterstitialAdShown)
 							self.onInterstitialAdShown(location);
 					}
 					else if (event == "onInterstitialAdHidden") {
 						self._isShowingInterstitialAd = false;
 
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 						 if (self.onFullScreenAdHidden)
 							self.onFullScreenAdHidden(location);
-//cranberrygame end; deprecated
+//luditeam end
 						 if (self.onInterstitialAdHidden)
 							self.onInterstitialAdHidden(location);
 					}
@@ -222,7 +222,7 @@ module.exports = {
 			[appId, appSignature]
         );
     },
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 	preloadFullScreenAd: function(location) {
         cordova.exec(
 			null,
@@ -241,7 +241,7 @@ module.exports = {
             [location]
         );
     },
-//cranberrygame end; deprecated
+//luditeam end
 	preloadInterstitialAd: function(location) {
         cordova.exec(
 			null,
@@ -296,11 +296,11 @@ module.exports = {
             [location]
         );
     },
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 	loadedFullScreenAd: function() {
 		return this._loadedInterstitialAd;
 	},
-//cranberrygame end; deprecated
+//luditeam end
 	loadedInterstitialAd: function() {
 		return this._loadedInterstitialAd;
 	},
@@ -310,11 +310,11 @@ module.exports = {
 	loadedRewardedVideoAd: function() {
 		return this._loadedRewardedVideoAd;
 	},
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 	isShowingFullScreenAd: function() {
 		return this._isShowingInterstitialAd;
 	},
-//cranberrygame end; deprecated
+//luditeam end
 	isShowingInterstitialAd: function() {
 		return this._isShowingInterstitialAd;
 	},
@@ -324,12 +324,12 @@ module.exports = {
 	isShowingRewardedVideoAd: function() {
 		return this._isShowingRewardedVideoAd;
 	},
-//cranberrygame start; deprecated
+//luditeam start; deprecated
 	onFullScreenAdPreloaded: null,
 	onFullScreenAdLoaded: null,
 	onFullScreenAdShown: null,
 	onFullScreenAdHidden: null,
-//cranberrygame end; deprecated
+//luditeam end
 	onInterstitialAdPreloaded: null,
 	onInterstitialAdLoaded: null,
 	onInterstitialAdShown: null,

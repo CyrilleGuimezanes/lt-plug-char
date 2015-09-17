@@ -1,18 +1,21 @@
-//Copyright (c) 2014 Sang Ki Kwon (Cranberrygame)
-//Email: cranberrygame@yahoo.com
-//Homepage: http://cranberrygame.github.io
-//License: MIT (http://opensource.org/licenses/MIT)
+//Copyright (c) 2015 Luditeam
+//Email: dev@Luditeam.com
 #import "ChartboostPlugin.h"
 #import <CommonCrypto/CommonDigest.h> //md5
 
 @implementation ChartboostPlugin
 
 @synthesize callbackIdKeepCallback;
+//
+@synthesize email;
+@synthesize licenseKey_;
+@synthesize validLicenseKey;
 
+//
 @synthesize appId;
 @synthesize appSignature;
 //
-@synthesize fullScreenAdPreload;
+@synthesize interstitialAdPreload;
 @synthesize moreAppsAdPreload;
 @synthesize rewardedVideoAdPreload;
 
@@ -102,6 +105,20 @@
 }
 
 
+
+- (NSString*) md5:(NSString*) input {
+    const char *cStr = [input UTF8String];
+    unsigned char digest[16];
+    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
+
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+
+    return  output;
+}
+
 - (void) _setUp:(NSString *)appId anAppSignature:(NSString *)appSignature {
 	self.appId = appId;
 	self.appSignature = appSignature;
@@ -112,13 +129,13 @@
 }
 
 -(void) _preloadInterstitialAd:(NSString *)location {
-	self.fullScreenAdPreload = YES;
+	self.interstitialAdPreload = YES;
 
 	[Chartboost cacheInterstitial:location];
 }
 
 -(void) _showInterstitialAd:(NSString *)location {
-	self.fullScreenAdPreload = NO;
+	self.interstitialAdPreload = NO;
 
 	[Chartboost showInterstitial:location];
 }
@@ -163,7 +180,7 @@
 - (void) didCacheInterstitial:(NSString *)location {
 	NSLog(@"%@", @"didCacheInterstitial");
 
-	if(fullScreenAdPreload) {
+	if(interstitialAdPreload) {
 		NSDictionary* result = @{
 			@"event":@"onInterstitialAdPreloaded",
 			@"message":location
@@ -553,8 +570,7 @@
 
 	NSDictionary* result = @{
 		@"event":@"onRewardedVideoAdCompleted",
-		@"message":location,
-    @"reward":reward
+		@"message":location
 	};
 	//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];
 	CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
