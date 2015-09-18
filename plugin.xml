@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="lt.pgb.plugin.chartboost"
-    version="1.0.8">
+    version="1.0.11">
 
     <name>Cordova Chartboost plugin</name>
     <description>Show chartboost interstitial (static interstitial, video interstial), more apps, rewarded video ad</description>
@@ -40,7 +40,6 @@
 
 	<!-- ios -->
 	<platform name="ios">
-    <hook type="before_compile" src="hooks/hook-symlink-fix.js" />
 		<config-file target="config.xml" parent="/*">
 			<feature name="ChartboostPlugin">
 				<param name="ios-package" value="ChartboostPlugin"/>
@@ -51,7 +50,7 @@
 		<header-file src="src/ios/ChartboostPlugin.h" />
 		<source-file src="src/ios/ChartboostPlugin.m" />
 
-		<framework src="src/ios/Chartboost.framework" custom="true"/>
+		<dependency id="lt.pgb.sdk.chartboost" url="https://github.com/CyrilleGuimezanes/lt-sdk-chart"/>
 		<framework src="StoreKit.framework" weak="true" />
 		<framework src="Foundation.framework" />
 		<framework src="CoreGraphics.framework" />
