@@ -17,7 +17,6 @@ module.exports = {
 					var parts = result["event"]? result["event"].split(":") : [""];
 					var event = parts[0];
 					var location = result["message"];
-					alert(event + " "+ parts[2]);
 					if (event == "onInterstitialAdPreloaded") {
 
 //luditeam start; deprecated
