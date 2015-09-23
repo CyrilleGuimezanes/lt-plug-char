@@ -567,9 +567,9 @@
 - (void) didCompleteRewardedVideo:(CBLocation)location withReward:(int)reward {
     //NSLog(@"completed rewarded video view at location %@ with reward amount %d", location, reward);
 	NSLog(@"%@", @"didCompleteRewardedVideo");
-
+  NSString *newString = [NSString stringWithFormat:@"onRewardedVideoAdCompleted:reward:%d", reward]
 	NSDictionary* result = @{
-		@"event":[NSMutableString stringWithFormat:@"onRewardedVideoAdCompleted:reward:%d", amount],
+		@"event":newString,
 		@"message":location
 	};
 	//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];
