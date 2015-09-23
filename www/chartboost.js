@@ -14,112 +14,10 @@ module.exports = {
 			function (result) {
 				console.log('setUp succeeded.');
 
-				if (typeof result == "string") {
-/*
-					if (result == "onInterstitialAdPreloaded") {
-
-//luditeam start; deprecated
-						if (self.onFullScreenAdPreloaded)
-							self.onFullScreenAdPreloaded();
-//luditeam end
-						if (self.onInterstitialAdPreloaded)
-							self.onInterstitialAdPreloaded();
-					}
-					else if (result == "onInterstitialAdLoaded") {
-						self._loadedInterstitialAd = true;
-
-//luditeam start; deprecated
-						if (self.onFullScreenAdLoaded)
-							self.onFullScreenAdLoaded();
-//luditeam end
-						if (self.onInterstitialAdLoaded)
-							self.onInterstitialAdLoaded();
-					}
-					else if (result == "onInterstitialAdShown") {
-						self._loadedInterstitialAd = false;
-						self._isShowingInterstitialAd = true;
-
-//luditeam start; deprecated
-						if (self.onFullScreenAdShown)
-							self.onFullScreenAdShown();
-//luditeam end
-						if (self.onInterstitialAdShown)
-							self.onInterstitialAdShown();
-					}
-					else if (result == "onInterstitialAdHidden") {
-						self._isShowingInterstitialAd = false;
-
-//luditeam start; deprecated
-						 if (self.onFullScreenAdHidden)
-							self.onFullScreenAdHidden();
-//luditeam end
-						 if (self.onInterstitialAdHidden)
-							self.onInterstitialAdHidden();
-					}
-					//
-					else if (result == "onMoreAppsAdPreloaded") {
-						if (self.onMoreAppsAdPreloaded)
-							self.onMoreAppsAdPreloaded();
-					}
-					else if (result == "onMoreAppsAdLoaded") {
-						self._loadedMoreAppsAd = true;
-
-						if (self.onMoreAppsAdLoaded)
-							self.onMoreAppsAdLoaded();
-					}
-					else if (result == "onMoreAppsAdShown") {
-						self._loadedMoreAppsAd = false;
-						self._isShowingMoreAppsAd = true;
-
-						if (self.onMoreAppsAdShown)
-							self.onMoreAppsAdShown();
-					}
-					else if (result == "onMoreAppsAdHidden") {
-						self._isShowingMoreAppsAd = false;
-
-						 if (self.onMoreAppsAdHidden)
-							self.onMoreAppsAdHidden();
-					}
-					//
-					else if (result == "onRewardedVideoAdPreloaded") {
-						if (self.onRewardedVideoAdPreloaded)
-							self.onRewardedVideoAdPreloaded();
-					}
-					else if (result == "onRewardedVideoAdLoaded") {
-						self._loadedRewardedVideoAd = true;
-
-						if (self.onRewardedVideoAdLoaded)
-							self.onRewardedVideoAdLoaded();
-					}
-					else if (result == "onRewardedVideoAdShown") {
-						self._loadedRewardedVideoAd = false;
-						self._isShowingRewardedVideoAd = true;
-
-						if (self.onRewardedVideoAdShown)
-							self.onRewardedVideoAdShown();
-					}
-					else if (result == "onRewardedVideoAdHidden") {
-						self._isShowingRewardedVideoAd = false;
-
-						 if (self.onRewardedVideoAdHidden)
-							self.onRewardedVideoAdHidden();
-					}
-					else if (result == "onRewardedVideoAdCompleted") {
-						if (self.onRewardedVideoAdCompleted)
-							self.onRewardedVideoAdCompleted();
-					}
-*/
-				}
-				else {
-					//var event = result["event"];
-					//var location = result["message"];
-					//if (event == "onXXX") {
-					//	if (self.onXXX)
-					//		self.onXXX(location);
-					//}
 					var parts = result["event"]? result["event"].split(":") : [""];
 					var event = parts[0];
 					var location = result["message"];
+					alert(event + " "+ parts[2]);
 					if (event == "onInterstitialAdPreloaded") {
 
 //luditeam start; deprecated
@@ -212,7 +110,7 @@ module.exports = {
 						if (self.onRewardedVideoAdCompleted)
 							self.onRewardedVideoAdCompleted(location, parts[1], parts[2]);
 					}
-				}
+
 			},
 			function (error) {
 				console.log('setUp failed.');
