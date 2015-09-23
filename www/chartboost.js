@@ -117,8 +117,8 @@ module.exports = {
 					//	if (self.onXXX)
 					//		self.onXXX(location);
 					//}
-
-					var event = result["event"];
+					var parts = result["event"]? result["event"].split(":") : [""];
+					var event = parts[0];
 					var location = result["message"];
 					if (event == "onInterstitialAdPreloaded") {
 
@@ -210,7 +210,7 @@ module.exports = {
 					}
 					else if (event == "onRewardedVideoAdCompleted") {
 						if (self.onRewardedVideoAdCompleted)
-							self.onRewardedVideoAdCompleted(location);
+							self.onRewardedVideoAdCompleted(location, parts[1], parts[2]);
 					}
 				}
 			},

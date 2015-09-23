@@ -569,7 +569,7 @@
 	NSLog(@"%@", @"didCompleteRewardedVideo");
 
 	NSDictionary* result = @{
-		@"event":@"onRewardedVideoAdCompleted",
+		@"event":[NSMutableString stringWithFormat:@"onRewardedVideoAdCompleted:reward:%d", amount],
 		@"message":location
 	};
 	//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];

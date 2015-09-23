@@ -668,7 +668,7 @@ public class ChartboostPlugin extends CordovaPlugin {
 			
 			JSONObject result = new JSONObject();
 			try {
-				result.put("event", "onRewardedVideoAdCompleted");
+				result.put("event", "onRewardedVideoAdCompleted:reward:"+reward);
 				result.put("message", location);
 			}
 			catch(JSONException ex){
