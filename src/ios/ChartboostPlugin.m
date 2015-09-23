@@ -567,7 +567,7 @@
 - (void) didCompleteRewardedVideo:(CBLocation)location withReward:(int)reward {
     //NSLog(@"completed rewarded video view at location %@ with reward amount %d", location, reward);
 	NSLog(@"%@", @"didCompleteRewardedVideo");
-  NSString *newString = [NSString stringWithFormat:@"onRewardedVideoAdCompleted:reward:%d", reward]
+  NSString *newString = [NSString stringWithFormat:@"onRewardedVideoAdCompleted:reward:%d", reward];
 	NSDictionary* result = @{
 		@"event":newString,
 		@"message":location
