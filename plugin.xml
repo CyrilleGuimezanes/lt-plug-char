@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="lt.plug.char"
-    version="2.0.0">
+    version="2.0.2">
 
     <name>lt-char</name>
     <description>test</description>
@@ -38,22 +38,22 @@
         <source-file src="src/android/chartboost.jar" target-dir="libs" />
     </platform>
 
-	<!-- ios -->
-	<platform name="ios">
-		<config-file target="config.xml" parent="/*">
-			<feature name="ChartboostPlugin">
-				<param name="ios-package" value="ChartboostPlugin"/>
-				<param name="onload" value="true"/>
-			</feature>
-		</config-file>
+    <!-- ios -->
+  	<platform name="ios">
+  		<config-file target="config.xml" parent="/*">
+  			<feature name="ChartboostPlugin">
+  				<param name="ios-package" value="ChartboostPlugin"/>
+  				<param name="onload" value="true"/>
+  			</feature>
+  		</config-file>
 
-		<header-file src="src/ios/ChartboostPlugin.h" />
-		<source-file src="src/ios/ChartboostPlugin.m" />
+  		<header-file src="src/ios/ChartboostPlugin.h" />
+  		<source-file src="src/ios/ChartboostPlugin.m" />
 
-		<dependency id="lt.pgb.sdk.chartboost" url="https://github.com/CyrilleGuimezanes/lt-sdk-chart"/>
-		<framework src="StoreKit.framework" weak="true" />
-		<framework src="Foundation.framework" />
-		<framework src="CoreGraphics.framework" />
-		<framework src="UIKit.framework" />
-	</platform>
+  		<framework src="src/ios/Chartboost.framework" custom="true" />
+  		<framework src="StoreKit.framework" weak="true" />
+  		<framework src="Foundation.framework" />
+  		<framework src="CoreGraphics.framework" />
+  		<framework src="UIKit.framework" />
+  	</platform>
 </plugin>
