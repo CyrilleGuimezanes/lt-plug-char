@@ -278,6 +278,7 @@
 
 - (void) didCloseInterstitial:(CBLocation)location {
 	NSLog(@"%@", @"didCloseInterstitial");
+  [self didDismissInterstitial:location];
 }
 
 /*
